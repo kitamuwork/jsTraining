@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .border_red {
+        border: 3px solid red;
+        padding: 3px;
+      }
+      .border_blue {
+        border: 3px solid blue;
+        padding: 3px;
+      }
+      .border_lightgreen {
+        border: 3px solid lightgreen;
+        padding: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grandparents" class="border_red">
+      <div id="parents" class="border_blue">
+        <div id="target" class="border_lightgreen">
+          <h6>Me</h6>
+        </div>
+      </div>
+    </div>
+    <script>
+      "use strict";
+      //parents要素の取得
+      const parents = document.getElementById("parents");
+      //Element生成
+      const h6 = document.createElement("h6");
+      console.log(h6);
+      h6.textContent = "Parents";
+      h6.classList.add("border_blue");
+      //生成された要素の追加
+      parents.appendChild(h6);
+
+
+      //target要素の取得
+      const target = document.getElementById("target");
+      //Element生成
+      const newDiv = document.createElement("div");
+      const newDiv2 = document.createElement("div");
+      //属性の追加
+      newDiv.classList.add("border_red");
+      newDiv.textContent = "テスト1";
+      newDiv2.classList.add("border_blue");
+      newDiv2.textContent = "テスト2";
+
+      //生成された要素の追加
+      target.appendChild(newDiv);
+      target.parentNode.appendChild(newDiv2);
+    </script>
+  </body>
+</html>

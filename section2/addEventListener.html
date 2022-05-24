@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" id="btn1" value="押してね"/>
+    <br>
+    <input type="button" id="btn2" value="押してね"/>
+    <script>
+      const btn1 = document.getElementById("btn1");
+      btn1.addEventListener("click",() => {
+        alert("btn1を押せてるよ！");
+      })
+      btn2.addEventListener("click",(e) => {
+        alert("btn2を押せてるよ！");
+        console.log(e);
+      })
+    </script>
+  </body>
+</html>

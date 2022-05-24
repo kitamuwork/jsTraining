@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .first_list {
+        color: darkgreen;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="div_first">
+      <ul>
+        <li class="test_list blue">aaa</li>
+        <li class="test_list">bbb</li>
+        <li class="test_list">ccc</li>
+      </ul>
+    </div>
+
+    <script>
+      document.getElementById("div_first").classList.add("first_list");
+      document.getElementById("div_first").classList.remove("blue");
+      //   console.log(test2);
+      //   test.classList.add("red");
+    </script>
+  </body>
+</html>

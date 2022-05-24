@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .w300 {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form_test1">
+      <input type="file" id="fileuploadId" name="fileuploadName" />
+      <br />
+      <img src="" class="w300" id="preview" />
+    </form>
+    <script>
+      // const form1 = document.getElementById("form_test1");
+      // console.log(form1);
+      const preview = document.getElementById("preview");
+      const file1 = document.forms.form_test1.fileuploadName;
+      file1.addEventListener("change", (e) => {
+        //   console.log(e);
+        //   console.log(e.target.files[0]);
+        const uploadFile = e.target.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+          // 画像ファイルを base64 文字列に変換します
+          preview.src = reader.result;
+        });
+
+        if (uploadFile) {
+          reader.readAsDataURL(uploadFile);
+        }
+      });
+      //   console.log(uploadFile);
+    </script>
+  </body>
+</html>
